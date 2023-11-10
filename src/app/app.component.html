@@ -1,1 +1,14 @@
 <router-outlet/>
+
+
+<!-- directivas de atributos-->
+<div [ngStyle]="{color: condition ?'blue' : 'red'}">Directiva ngStyle</div>
+<div [ngClass]="condition ? 'green' : 'red'">Directiva ngClass</div>
+
+<!-- directivas de estructura-->
+<div *ngIf="condition">Directiva *ngIf (Renderizado)</div>
+<ul>
+    <ng-container *ngFor="let item of arrayObjects; let i = index; trackBy: trackByFn">
+        <li *ngIf="condition">{{item.name + i}}</li>
+    </ng-container>
+</ul>

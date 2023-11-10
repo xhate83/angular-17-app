@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardChildComponent } from './dashboard-child/dashboard-child.component';
 
@@ -11,11 +11,9 @@ import { DashboardChildComponent } from './dashboard-child/dashboard-child.compo
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  text = 'Dashboard';
-  private _changeDetectorRef = inject(ChangeDetectorRef)
+  text = 'Texto inicial';
 
-  handlerClick(): void {
-    this.text = `Dashboard cambia el texto`;
-    this._changeDetectorRef.markForCheck();
+  handleClick(): void {
+    this.text = 'Padre cambia el texto';
   }
 }
